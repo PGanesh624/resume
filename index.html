@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated CV</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        img {
+            border-radius: 50%;
+            height:155px;
+            width: 150px;
+}
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 3rem;
+    animation: slideIn 2s ease-out;
+}
+
+header p {
+    font-size: 1.5rem;
+    animation: fadeIn 2s ease-out 1s;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+section {
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 4px;
+    width: 50px;
+    background: #333;
+    animation: expand 1s ease-out;
+}
+
+section p, section ul {
+    margin: 1rem 0;
+}
+
+section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+section ul li {
+    background: #eee;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s;
+}
+
+section ul li:hover {
+    transform: scale(1.05);
+}
+
+.job {
+    margin-bottom: 1.5rem;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes expand {
+    from {
+        width: 0;
+    }
+    to {
+        width: 50px;
+    }
+}
+
+    </style>
+   <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBmowH73DP9xqg8-ynoOKGledNVqN2Sh-g",
+      authDomain: "my-cv-e9479.firebaseapp.com",
+      projectId: "my-cv-e9479",
+      storageBucket: "my-cv-e9479.appspot.com",
+      messagingSenderId: "289973175192",
+      appId: "1:289973175192:web:5d146a406184166dce61ed",
+      measurementId: "G-Y9XJ7B152Y"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</head>
+<body>
+    <header>
+        <h1>P Ganesh Kumar</h1>
+        <p>Web Developer</p>
+    </header>
+    <section class="about">
+        <h2>About Me</h2>
+        <img src="mypic.jpg">
+        <p style="text-align: justify;">Looking for carrier oriented position with a leading organization in any department related with computer programming ,where my experience and management disciplines will enable
+            to make a significant contribution and where I will have an opportunity for professional growth and advancement that commensurate with my   performance and where my
+            contribution should be appreciated.</p>
+    </section>
+    <section class="Educational">
+        <h2>Educational Qualifications</h2>
+        <ul>
+            <li>LE-MENT COLLEGE OF ADVANCED STUDIES, PATTAMBI<br>
+                [2018 June]-[ 2021 April]
+            </li>
+            <li>S.N.TRUST HIGHER SECONDARY SCHOOL, SHORANUR<br>
+                [2016 June]-[2018 March]
+                </li>
+            <li>MAHARISHI VIDYA MANDIR, KULAPPULLY<br>
+                [2003 June]-[2016 March]</li>
+            
+        </ul>
+    </section>
+    <section class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Python Django Framework</li>
+            <li>Java</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            
+        </ul>
+    </section>
+    <section class="achievements">
+        <h2>Other Skills</h2>
+        <p>I Re-Designed my College website entirely using WordPress Software. The website is up and running
+            promisingly.</p>
+        <p>Website:<a href="https://lementcollege.com/">Le-Ment College Of Advanced Studies</a></p>
+    </section>
+    <section class="experience">
+        <h2>Experience</h2>
+        <div class="job">
+            <h3>Web Developer at ABC Corp</h3>
+            <p>Developed numerous web applications and improved website performance.</p>
+        </div>
+        <div class="job">
+            <h3>Front-end Developer at XYZ Inc</h3>
+            <p>Led the front-end team and created interactive UI components.</p>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Contact</h2>
+        <p>Email: john.doe@example.com</p>
+        <p>Phone: (123) 456-7890</p>
+    </section>
+</body>
+</html>
